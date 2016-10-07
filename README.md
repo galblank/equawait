@@ -1,6 +1,6 @@
 # equawait
 
-[![CI Status](http://img.shields.io/travis/Blank, Gal (Contractor)/equawait.svg?style=flat)](https://travis-ci.org/Blank, Gal (Contractor)/equawait)
+[![CI Status](http://img.shields.io/travis/Blank, Gal/equawait.svg?style=flat)](https://travis-ci.org/Blank, Gal/equawait)
 [![Version](https://img.shields.io/cocoapods/v/equawait.svg?style=flat)](http://cocoapods.org/pods/equawait)
 [![License](https://img.shields.io/cocoapods/l/equawait.svg?style=flat)](http://cocoapods.org/pods/equawait)
 [![Platform](https://img.shields.io/cocoapods/p/equawait.svg?style=flat)](http://cocoapods.org/pods/equawait)
@@ -9,6 +9,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 To create and display a waiting dialog :
+
 func showwaitingwindow(message:String,showinview:UIView?)
     {
         
