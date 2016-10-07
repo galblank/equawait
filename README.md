@@ -22,7 +22,7 @@ pod "equawait"
 
 ## Author
 
-Blank, Gal (Contractor), gal_blank@comcast.com
+Blank, Gal galblank@gmail.com
 
 ## License
 
