@@ -36,7 +36,7 @@ class EquaWait: UIView,barCycleDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = Defines.sharedInstance.themeColor
+        backgroundColor = UIColor.blackColor()
         alpha = 0.8
         layer.cornerRadius = 5.0
         let posX = frame.size.width / 2 - (((5 * 6) + (2 * 4)) / 2)
