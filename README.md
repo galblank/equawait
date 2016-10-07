@@ -28,6 +28,7 @@ func showwaitingwindow(message:String,showinview:UIView?)
  
     }
 
+<img src="http://i68.tinypic.com/254ztrr.png" width="100" height="100"><br />
 ## Requirements
 
 ## Installation
