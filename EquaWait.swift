@@ -6,7 +6,7 @@
 
 import UIKit
 
-class EquaWait: UIView,barCycleDelegate {
+public class EquaWait: UIView,barCycleDelegate {
 
     
     var bar1:EquaBar!
@@ -15,16 +15,16 @@ class EquaWait: UIView,barCycleDelegate {
     var bar4:EquaBar!
     var bar5:EquaBar!
     
-    var timer:NSTimer? = nil
-    var barInitialHeight:CGFloat = 5
-    var barLimits:CGFloat = 10.0
-    var barWidth:CGFloat = 6
+    public var timer:NSTimer? = nil
+    public var barInitialHeight:CGFloat = 5
+    public var barLimits:CGFloat = 10.0
+    public var barWidth:CGFloat = 6
     
-    var barsArray:[EquaBar] = [EquaBar]()
-    var currentIndex = 0
-    var cycleBarIndex = 5
+    public var barsArray:[EquaBar] = [EquaBar]()
+    public var currentIndex = 0
+    public var cycleBarIndex = 5
     
-    var label:String = "Loading..."
+    public var label:String = "Loading..."
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -33,7 +33,7 @@ class EquaWait: UIView,barCycleDelegate {
     }
     */
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         backgroundColor = UIColor.blackColor()
@@ -104,12 +104,12 @@ class EquaWait: UIView,barCycleDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func animate()
+    public func animate()
     {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.15, target: self, selector: #selector(EquaWait.expandbarcollaps), userInfo: nil, repeats: true)
     }
     
-    func finishedCycle() {
+    public func finishedCycle() {
         cycleBarIndex -= 1
         if(cycleBarIndex <= 0){
             cycleBarIndex = 5
@@ -117,7 +117,7 @@ class EquaWait: UIView,barCycleDelegate {
         }
     }
     
-    func expandbarcollaps()
+    public func expandbarcollaps()
     {
         barsArray[currentIndex].start()
         if(currentIndex >= barsArray.count - 1){
