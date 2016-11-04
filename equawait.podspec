@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'equawait'
-  s.version          = '0.1.5'
+  s.version          = '0.1.3'
   s.summary          = 'Simple Loader indicator in a form of vertical equalizers and text'
 
 # This description is used to generate tags and improve search results.
