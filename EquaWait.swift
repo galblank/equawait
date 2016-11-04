@@ -7,7 +7,7 @@
 import UIKit
 
 public class EquaWait: UIView,barCycleDelegate {
-
+    
     
     var bar1:EquaBar!
     var bar2:EquaBar!
@@ -20,18 +20,18 @@ public class EquaWait: UIView,barCycleDelegate {
     public var barLimits:CGFloat = 10.0
     public var barWidth:CGFloat = 6
     
-    public var barsArray:[EquaBar] = [EquaBar]()
+    var barsArray:[EquaBar] = [EquaBar]()
     public var currentIndex = 0
     public var cycleBarIndex = 5
     
     public var label:String = "Loading..."
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -125,9 +125,9 @@ public class EquaWait: UIView,barCycleDelegate {
             currentIndex = 0
         }
         else{
-           currentIndex += 1
+            currentIndex += 1
         }
         
     }
-
+    
 }
