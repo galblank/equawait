@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'equawait'
-  s.version          = '0.1.3'
+  s.version          = '0.1.6'
   s.summary          = 'Simple Loader indicator in a form of vertical equalizers and text'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/galblank/equawait.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/galblank'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = '**/*'
   
