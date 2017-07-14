@@ -15,27 +15,27 @@ protocol barCycleDelegate {
 class EquaBar: CALayer {
 
     var cycleDelegate:barCycleDelegate? = nil
-    var timer:NSTimer? = nil
+    var timer:Timer? = nil
     var isExpanding = true
     var maxHeight:CGFloat = 0.0
     var minHeight:CGFloat = 0.0
     override init() {
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EquaBar.expandCollaps), name: "internal.expandcollaps", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(EquaBar.expandCollaps), name: NSNotification.Name(rawValue: "internal.expandcollaps"), object: nil)
     }
     
-    override init(layer: AnyObject) {
+    override init(layer: Any) {
         super.init(layer: layer)
     }
     
     func start()
     {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: #selector(EquaBar.expandCollaps), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(EquaBar.expandCollaps), userInfo: nil, repeats: true)
     }
     
     func expand()
     {
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.frame.size.height += 7
             self.frame.origin.y -= 3.5
         }
@@ -43,7 +43,7 @@ class EquaBar: CALayer {
     
     func collaps()
     {
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.frame.size.height -= 7
             self.frame.origin.y += 3.5
         }

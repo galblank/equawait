@@ -15,7 +15,9 @@ public class EquaWait: UIView,barCycleDelegate {
     var bar4:EquaBar!
     var bar5:EquaBar!
     
-    public var timer:NSTimer? = nil
+    
+    
+    public var timer:Timer? = nil
     public var barInitialHeight:CGFloat = 5
     public var barLimits:CGFloat = 10.0
     public var barWidth:CGFloat = 6
@@ -36,7 +38,7 @@ public class EquaWait: UIView,barCycleDelegate {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.blackColor()
+        backgroundColor = UIColor.black
         alpha = 0.8
         layer.cornerRadius = 5.0
         let posX = frame.size.width / 2 - (((5 * 6) + (2 * 4)) / 2)
@@ -44,7 +46,7 @@ public class EquaWait: UIView,barCycleDelegate {
         bar1 = EquaBar()
         bar1.cycleDelegate = self
         bar1.frame = CGRect(origin: CGPoint(x: posX,y: posY), size: CGSize(width: barWidth, height: barInitialHeight))
-        bar1.backgroundColor = UIColor.whiteColor().CGColor
+        bar1.backgroundColor = UIColor.white.cgColor
         bar1.opacity = 0.7
         bar1.maxHeight = frame.size.height - 20
         bar1.minHeight = barInitialHeight
@@ -53,7 +55,7 @@ public class EquaWait: UIView,barCycleDelegate {
         
         bar2 = EquaBar()
         bar2.frame = CGRect(origin: CGPoint(x: bar1.frame.origin.x + barWidth + 2,y: posY), size: CGSize(width: barWidth, height: barInitialHeight))
-        bar2.backgroundColor = UIColor.whiteColor().CGColor
+        bar2.backgroundColor = UIColor.white.cgColor
         bar2.opacity = 0.7
         bar2.maxHeight = frame.size.height - 20
         bar2.minHeight = barInitialHeight
@@ -63,7 +65,7 @@ public class EquaWait: UIView,barCycleDelegate {
         
         bar3 = EquaBar()
         bar3.frame = CGRect(origin: CGPoint(x: bar2.frame.origin.x + barWidth + 2,y: posY), size: CGSize(width: barWidth, height: barInitialHeight))
-        bar3.backgroundColor = UIColor.whiteColor().CGColor
+        bar3.backgroundColor = UIColor.white.cgColor
         bar3.opacity = 0.7
         bar3.maxHeight = frame.size.height - 20
         bar3.minHeight = barInitialHeight
@@ -73,7 +75,7 @@ public class EquaWait: UIView,barCycleDelegate {
         
         bar4 = EquaBar()
         bar4.frame = CGRect(origin: CGPoint(x: bar3.frame.origin.x + barWidth + 2,y: posY), size: CGSize(width: barWidth, height: barInitialHeight))
-        bar4.backgroundColor = UIColor.whiteColor().CGColor
+        bar4.backgroundColor = UIColor.white.cgColor
         bar4.maxHeight = frame.size.height - 20
         bar4.opacity = 0.7
         bar4.minHeight = barInitialHeight
@@ -83,7 +85,7 @@ public class EquaWait: UIView,barCycleDelegate {
         
         bar5 = EquaBar()
         bar5.frame = CGRect(origin: CGPoint(x: bar4.frame.origin.x + barWidth + 2,y: posY), size: CGSize(width: barWidth, height: barInitialHeight))
-        bar5.backgroundColor = UIColor.whiteColor().CGColor
+        bar5.backgroundColor = UIColor.white.cgColor
         bar5.maxHeight = frame.size.height - 20
         bar5.opacity = 0.7
         bar5.minHeight = barInitialHeight
@@ -93,8 +95,8 @@ public class EquaWait: UIView,barCycleDelegate {
         
         
         let textlabel = UILabel(frame: CGRect(x: bar1.frame.origin.x, y: frame.size.height - 20, width: frame.size.width - bar1.frame.origin.x, height: 20))
-        textlabel.textAlignment = .Left
-        textlabel.textColor = UIColor.whiteColor()
+        textlabel.textAlignment = .left
+        textlabel.textColor = UIColor.white
         textlabel.text = label
         textlabel.font = UIFont(name: "SFUIText-Regular", size: 10)
         addSubview(textlabel)
@@ -106,14 +108,14 @@ public class EquaWait: UIView,barCycleDelegate {
     
     public func animate()
     {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.15, target: self, selector: #selector(EquaWait.expandbarcollaps), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.15, target: self, selector: #selector(EquaWait.expandbarcollaps), userInfo: nil, repeats: true)
     }
     
     public func finishedCycle() {
         cycleBarIndex -= 1
         if(cycleBarIndex <= 0){
             cycleBarIndex = 5
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.15, target: self, selector: #selector(EquaWait.expandbarcollaps), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.15, target: self, selector: #selector(EquaWait.expandbarcollaps), userInfo: nil, repeats: true)
         }
     }
     
